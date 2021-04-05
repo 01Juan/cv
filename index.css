@@ -1,0 +1,438 @@
+/* Variáveis */
+:root{
+    --borda: #062c68;
+    --borda2: linear-gradient(10deg, #062c68 0% 5%, rgba(6, 44, 104, 0.857) 20% 65%, rgba(6, 44, 104, 0.515) 80% 100%);
+    --cinza: rgba(59, 58, 58, 0.618);
+    --branco: rgb(236, 234, 231);
+    --sombra: -3px 3px .5rem var(--cinza);
+    --marginPadrao: .5rem;
+    --verde: rgb(3, 245, 3);
+    --corTexto: #000;
+}
+
+/* Reset */
+*{
+    border: 0;
+    box-sizing: border-box;
+    color: var(--corTexto);
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.5rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    text-shadow: var(--sombra);
+    text-align: justify;
+    transition: 2.5s;
+}
+
+/* Ocultos */
+.hidden{
+    display: none;
+}
+
+#conteudo{
+    background: var(--borda);
+    border-radius: 8px;
+    padding: 0 auto var(--marginPadrao);
+}
+
+
+/* ----------- */
+header{
+    padding: var(--marginPadrao);
+    text-align: center;
+}
+
+header figure{
+    display: flex;
+    flex-direction: column;
+}
+
+div figure img{
+    border-radius: 50%;
+    box-shadow: var(--sombra);
+}
+
+#dadosPessoais{
+    padding-top: calc(var(--marginPadrao)*2);
+}
+
+#dadosPessoais h1,
+#dadosPessoais p,
+#dadosPessoais li{
+    text-align: center;
+}
+
+#ladoDireito{
+    display: flex;
+    flex-direction: column;
+    margin-left: auto;
+}
+
+#conteudo label{
+    background-color: #04133d;
+    display: flex;
+    margin-left: auto;
+    margin-top: auto;
+    padding: calc(var(--marginPadrao)*0.5);
+    height: calc(var(--marginPadrao)*4);
+    width: calc(var(--marginPadrao)*8);
+    border-radius: calc(var(--marginPadrao)*2);
+    cursor: pointer;
+}
+
+#conteudo label span{
+    background-color: #000;
+    display: flex;
+    height: calc(var(--marginPadrao)*3);
+    width: calc(var(--marginPadrao)*3);
+    border-radius: calc(var(--marginPadrao)*1.5);
+}
+
+/* ----------- */
+main{
+    background: var(--branco);
+    border-radius: 8px;
+    margin: var(--marginPadrao);
+    padding: var(--marginPadrao);
+}
+
+#formacaoIdiomasCursosGerais section{
+    padding: var(--marginPadrao);
+}
+
+#experienciasProfissionais{
+    padding: var(--marginPadrao) 0;
+}
+
+#experienciasProfissionais h2{
+    padding-bottom: var(--marginPadrao);
+}
+
+#formacaoIdiomasCursosGerais section h2,
+#formacaoIdiomasCursosGerais section p,
+#formacaoIdiomasCursosGerais section li,
+#experienciasProfissionais h2,
+#experienciasProfissionais h3,
+#experienciasProfissionais h3+p,
+#experienciasProfissionais h3+p+p{
+    text-align: center;
+}
+
+#cadaExperiencia section{
+    padding: var(--marginPadrao);
+}
+
+#perfilProfissional{
+    padding: var(--marginPadrao) 0;
+}
+
+#perfilProfissional {
+    text-indent: calc(var(--marginPadrao)*4);
+}
+
+#perfilProfissional h2,
+#especialidades h2,
+#especialidades h3,
+#especialidades li{
+    padding-bottom: var(--marginPadrao);
+    text-align: center;
+}
+
+#especialidades{
+    padding: var(--marginPadrao) 0;
+}
+
+/* ----------- */
+footer{
+    display: flex;
+    font-size: calc(var(--marginPadrao)*4);
+    justify-content: space-around;
+    padding-bottom: calc(var(--marginPadrao)*3);
+    padding-top: calc(var(--marginPadrao)*2);
+}
+
+footer i{
+    color: white;
+}
+
+/* @media */
+@media (min-width: 768px){
+    #conteudo{
+        width: 768px;
+        margin: 0 auto;
+    }
+
+    header{
+        display: flex;
+    }
+
+    header figure{
+        box-shadow: 0px -10px 20px skyblue;
+        border-radius: 50%;
+    }
+
+    header figure img{
+        box-shadow: none;
+    }
+
+    #dadosPessoais{
+        height: min-content;
+        left: 50%;
+        position: absolute;
+        top: calc(var(--marginPadrao)*3);
+        transform: translatex(-50%);
+    }
+
+    #formacaoIdiomasCursosGerais,
+    #especialidades div{
+        display: flex;
+        justify-content: space-around;
+    }
+    #formacaoIdiomasCursosGerais section h2,
+    #formacaoIdiomasCursosGerais section p,
+    #formacaoIdiomasCursosGerais section li{
+        text-align: justify;
+    }
+
+    #cadaExperiencia{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    a:hover,
+    i:hover{
+        text-shadow: 0px 0px 5px skyblue;
+    }
+}
+
+/* -----Dark------ */
+#darkMode:checked ~ #conteudo{
+    --borda: #000;
+    /* --cinza: rgb(3, 245, 3); */
+    --branco: linear-gradient(15deg, #000 0% 5%, rgba(15, 16, 17, 0.857) 20% 65%, rgb(12, 22, 37) 80% 100%);
+    --sombra: 0px 0px 1rem var(--cinza);
+    --corTexto: white;
+}
+
+#darkMode:checked ~ #conteudo h2,
+#darkMode:checked ~ #conteudo h3,
+#darkMode:checked ~ #conteudo h4{
+    --cinza: rgb(3, 245, 3);
+    --sombra: 0px 0px 1rem var(--cinza);
+}
+
+#darkMode:checked ~ #conteudo header figure img{
+    box-shadow: 0px -10px 20px gold;
+}
+
+#darkMode:checked ~ #conteudo header label span{
+    margin-left: calc(var(--marginPadrao)*4);
+}
+
+#darkMode:checked ~ #conteudo .orbit-spinner{
+    display: block;
+}
+
+
+
+/* spinner */
+.orbit-spinner, .orbit-spinner * {
+    box-sizing: border-box;
+  }
+
+  .orbit-spinner {
+    height: 55px;
+    width: 55px;
+    border-radius: 50%;
+    perspective: 800px;
+  }
+
+  .orbit-spinner .orbit {
+    position: absolute;
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+  }
+
+  .orbit-spinner .orbit:nth-child(1) {
+    left: 0%;
+    top: 0%;
+    animation: orbit-spinner-orbit-one-animation 1200ms linear infinite;
+    border-bottom: 3px solid #ff1d5e;
+  }
+
+  .orbit-spinner .orbit:nth-child(2) {
+    right: 0%;
+    top: 0%;
+    animation: orbit-spinner-orbit-two-animation 1200ms linear infinite;
+    border-right: 3px solid #ff1d5e;
+  }
+
+  .orbit-spinner .orbit:nth-child(3) {
+    right: 0%;
+    bottom: 0%;
+    animation: orbit-spinner-orbit-three-animation 1200ms linear infinite;
+    border-top: 3px solid #ff1d5e;
+  }
+
+  @keyframes orbit-spinner-orbit-one-animation {
+    0% {
+      transform: rotateX(35deg) rotateY(-45deg) rotateZ(0deg);
+    }
+    100% {
+      transform: rotateX(35deg) rotateY(-45deg) rotateZ(360deg);
+    }
+  }
+
+  @keyframes orbit-spinner-orbit-two-animation {
+    0% {
+      transform: rotateX(50deg) rotateY(10deg) rotateZ(0deg);
+    }
+    100% {
+      transform: rotateX(50deg) rotateY(10deg) rotateZ(360deg);
+    }
+  }
+
+  @keyframes orbit-spinner-orbit-three-animation {
+    0% {
+      transform: rotateX(35deg) rotateY(55deg) rotateZ(0deg);
+    }
+    100% {
+      transform: rotateX(35deg) rotateY(55deg) rotateZ(360deg);
+    }
+  }
+
+  .breeding-rhombus-spinner {
+    height: 65px;
+    width: 65px;
+    position: relative;
+    transform: rotate(45deg);
+  }
+
+  .breeding-rhombus-spinner, .breeding-rhombus-spinner * {
+    box-sizing: border-box;
+  }
+
+  .breeding-rhombus-spinner .rhombus {
+    height: calc(65px / 7.5);
+    width: calc(65px / 7.5);
+    animation-duration: 2000ms;
+    top: calc(65px / 2.3077);
+    left: calc(65px / 2.3077);
+    background-color: #ff1d5e;
+    position: absolute;
+    animation-iteration-count: infinite;
+  }
+
+  .breeding-rhombus-spinner .rhombus:nth-child(2n+0) {
+     margin-right: 0;
+   }
+
+  .breeding-rhombus-spinner .rhombus.child-1 {
+    animation-name: breeding-rhombus-spinner-animation-child-1;
+    animation-delay: calc(100ms * 1);
+  }
+
+  .breeding-rhombus-spinner .rhombus.child-2 {
+    animation-name: breeding-rhombus-spinner-animation-child-2;
+    animation-delay: calc(100ms * 2);
+  }
+
+  .breeding-rhombus-spinner .rhombus.child-3 {
+    animation-name: breeding-rhombus-spinner-animation-child-3;
+    animation-delay: calc(100ms * 3);
+  }
+
+  .breeding-rhombus-spinner .rhombus.child-4 {
+    animation-name: breeding-rhombus-spinner-animation-child-4;
+    animation-delay: calc(100ms * 4);
+  }
+
+  .breeding-rhombus-spinner .rhombus.child-5 {
+    animation-name: breeding-rhombus-spinner-animation-child-5;
+    animation-delay: calc(100ms * 5);
+  }
+
+  .breeding-rhombus-spinner .rhombus.child-6 {
+    animation-name: breeding-rhombus-spinner-animation-child-6;
+    animation-delay: calc(100ms * 6);
+  }
+
+  .breeding-rhombus-spinner .rhombus.child-7 {
+    animation-name: breeding-rhombus-spinner-animation-child-7;
+    animation-delay: calc(100ms * 7);
+  }
+
+  .breeding-rhombus-spinner .rhombus.child-8 {
+    animation-name: breeding-rhombus-spinner-animation-child-8;
+    animation-delay: calc(100ms * 8);
+  }
+
+  .breeding-rhombus-spinner .rhombus.big {
+    height: calc(65px / 3);
+    width: calc(65px / 3);
+    animation-duration: 2000ms;
+    top: calc(65px / 3);
+    left: calc(65px / 3);
+    background-color: #ff1d5e;
+    animation: breeding-rhombus-spinner-animation-child-big 2s infinite;
+    animation-delay: 0.5s;
+  }
+
+
+  @keyframes breeding-rhombus-spinner-animation-child-1 {
+    50% {
+      transform: translate(-325%, -325%);
+    }
+  }
+
+  @keyframes breeding-rhombus-spinner-animation-child-2 {
+    50% {
+      transform: translate(0, -325%);
+    }
+  }
+
+  @keyframes breeding-rhombus-spinner-animation-child-3 {
+    50% {
+      transform: translate(325%, -325%);
+    }
+  }
+
+  @keyframes breeding-rhombus-spinner-animation-child-4 {
+    50% {
+      transform: translate(325%, 0);
+    }
+  }
+
+  @keyframes breeding-rhombus-spinner-animation-child-5 {
+    50% {
+      transform: translate(325%, 325%);
+    }
+  }
+
+  @keyframes breeding-rhombus-spinner-animation-child-6 {
+    50% {
+      transform: translate(0, 325%);
+    }
+  }
+
+  @keyframes breeding-rhombus-spinner-animation-child-7 {
+    50% {
+      transform: translate(-325%, 325%);
+    }
+  }
+
+  @keyframes breeding-rhombus-spinner-animation-child-8 {
+    50% {
+      transform: translate(-325%, 0);
+    }
+  }
+
+  @keyframes breeding-rhombus-spinner-animation-child-big {
+    50% {
+      transform: scale(0.5);
+    }
+  }
